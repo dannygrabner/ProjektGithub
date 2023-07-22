@@ -7,8 +7,59 @@
         mc:Ignorable="d"
         Title="HauptMenueFenster" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="116,57,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="282,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="5.492,1.515"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10">
+
+            </ColumnDefinition>
+            <ColumnDefinition>
+
+            </ColumnDefinition>
+            <ColumnDefinition>
+
+            </ColumnDefinition>
+            <ColumnDefinition>
+
+            </ColumnDefinition>
+            <ColumnDefinition>
+
+            </ColumnDefinition>
+            <ColumnDefinition>
+
+            </ColumnDefinition>
+            <ColumnDefinition Width="10">
+
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10">
+
+            </RowDefinition>
+            <RowDefinition>
+
+            </RowDefinition>
+            <RowDefinition>
+
+            </RowDefinition>
+            <RowDefinition>
+
+            </RowDefinition>
+            <RowDefinition>
+
+            </RowDefinition>
+            <RowDefinition Height="10">
+
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Image x:Name="KameraImage"  Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+        <Button Grid.Column="1" Content="Start Kamera"  Grid.Row="3"  Grid.RowSpan="1" Grid.ColumnSpan="2" Height="30" Click="ButtonStart_Kamera" VerticalAlignment="Top" />
+        <Button Grid.Column="1" Content="Stop Kamera"  Grid.Row="3"  Grid.RowSpan="1" Grid.ColumnSpan="2" Height="30" Click="ButtonStop_Kamera" VerticalAlignment="Center"  />
+
+        <Image x:Name="KameraFoto"  Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+        <Button Grid.Column="3" Content="Foto machen"  Grid.Row="3"  Grid.RowSpan="1" Grid.ColumnSpan="2" Height="30" Click="KameraFotoMachen" VerticalAlignment="Top" />
+        <Button Grid.Column="3" Content="Überprüfen ML"  Grid.Row="3"  Grid.RowSpan="1" Grid.ColumnSpan="2" Height="30" Click="ÜberprüfenML" VerticalAlignment="Center"  />
+        <TextBox x:Name="TextboxErgebnisML" Grid.Column="1"   Grid.Row="4"  Text="Hier kommt dein Ergebnis" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" BorderThickness="0" />
+
 
     </Grid>
 </Window>
