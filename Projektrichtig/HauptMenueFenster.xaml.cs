@@ -13,11 +13,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using System.IO.Ports;
+using Emgu.CV.CvEnum;
+using System.Threading;
 
 
 
 namespace Projektrichtig
 {
+
+    
     /// <summary>
     /// Interaktionslogik für HauptMenueFenster.xaml
     /// </summary>
@@ -25,10 +30,14 @@ namespace Projektrichtig
     {
         private System.Timers.Timer MyDataTimer;
         FrameSource frameSource = Cv2.CreateFrameSource_Camera(0);
+
+        private SerialPort serialPort = new SerialPort();
         public HauptMenueFenster()
         {
             InitializeComponent();
-           
+            serialPort.PortName = "COM3"; // Portname entsprechend anpassen
+            serialPort.BaudRate = 9600;
+            serialPort.Open();
 
         }
 
@@ -125,6 +134,31 @@ namespace Projektrichtig
             }
         }
 
+        private void TextboxErgebnisML_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (TextboxErgebnisML.Text == "1.Finger")
+            {
+                serialPort.Write("1");
+            }else if (TextboxErgebnisML.Text == "2.Finger")
+            {
+                serialPort.Write("2");
+            }
+            else if (TextboxErgebnisML.Text == "3.Finger")
+            {
+                serialPort.Write("3");
+            }
+            else if (TextboxErgebnisML.Text == "4.Finger")
+            {
+                serialPort.Write("4");
+            }
+            else if (TextboxErgebnisML.Text == "5.Finger")
+            {
+                serialPort.Write("5");
+            }else if (TextboxErgebnisML.Text == "0.Finger")
+            {
+                serialPort.Write("0");
+            }
+        }
     }
 
 
